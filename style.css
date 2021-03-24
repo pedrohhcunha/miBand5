@@ -78,15 +78,37 @@ section#first-section .left-area .buttons{
     margin-top: 15px;
 }
 section#first-section .left-area .buttons button{
-    border: none;
+    border: 3px solid var(--blue);
     background: var(--blue);
-    color: #fff;
+    color: var(--white);
+    font-weight: 800;
     text-transform: uppercase;
     padding: 15px;
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
+    transition: .3s;
 }
+section#first-section .left-area .buttons button:nth-child(1):hover{
+    filter: brightness(.8);
+}
+section#first-section .left-area .buttons button:nth-child(2){
+    border: 3px solid var(--blue);
+    background: none;
+    color: var(--blue);
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+}
+section#first-section .left-area .buttons button:nth-child(2):hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
 section#first-section img{
     height: 80%;
     cursor: pointer;
@@ -119,6 +141,10 @@ section#second-section .feature{
     background-color: var(--white);
     border-radius: 15px;
     margin: 40px;
+    transition: .5s;
+}
+section#second-section .feature:hover{
+    background-color: #d6c7b4;
 }
 section#second-section .left-features{
     transform: translateX(70px);
@@ -295,4 +321,27 @@ section#sixth-section .galery .area img{
 }
 section#sixth-section .galery .area:hover img{
     transform: scale(1.5);
+}
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 0 5%;
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+}
+footer a{
+    color: var(--blue);
+    text-decoration: none;
+    margin-right: 10px;
+}
+footer a:hover{
+    text-decoration: underline;
 }
