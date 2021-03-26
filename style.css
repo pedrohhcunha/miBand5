@@ -30,6 +30,9 @@ header{
     color: var(--white);
     z-index: 100000;
 }
+header #menuBtn{
+    display: none;
+}
 #span{
     z-index: 99999;
     width: 100%;
@@ -358,3 +361,158 @@ footer a{
 footer a:hover{
     text-decoration: underline;
 }
+@media (max-width: 800px) {
+    header{
+        background-color: var(--orange);
+    }
+    header #menuBtn{
+        display: block;
+        font-size: 20px;
+    }
+    header ul{
+        display: block;
+        text-align: center;    
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: var(--orange);
+        transform: translateX(100%);
+        opacity: 0;
+        transition: .5s;
+    }
+    header.open ul{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    header ul li{
+        text-decoration: none;
+        list-style: none;
+        padding: 10px 15px;
+    }
+    header ul li a{
+        color: var(--white);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    section#first-section{
+        height: auto;
+        padding: 100px 5vw 50px 5vw;
+    }
+    section#first-section .left-area h1{
+        font-size: 55px;
+    }
+    section#first-section .left-area p{
+        width: 100%;
+    }
+    section#first-section img{
+        display: none;
+    }
+    section#second-section{
+        padding: 150px 5vw 50px 5vw;
+        display: block;
+    }
+    section#second-section img{
+        display: none;
+    }
+    section#second-section .feature{
+        width: 90vw;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    section#second-section .left-features{
+        transform: translateX(0);
+    }
+    section#second-section .right-features{
+        transform: translateX(0);
+    }
+    section#second-section .left-features .feature:nth-child(2){
+        transform: translateX(0);
+    }
+    section#second-section .right-features .feature:nth-child(2){
+        transform: translateX(0);
+    }
+}
+@media (max-width: 500px){
+    section#third-section{
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    section#third-section .cards{
+        display: flex;
+        align-items: center;
+        justify-content: left; 
+        overflow-x: scroll;
+    }
+    section#third-section .cards .card{
+        min-width: 90vw;
+        margin: 0 5vw;
+    }
+    section#forth-section{
+        padding: 30px 5%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section#forth-section .option{
+        margin: 10px 0;
+        width: 100%;
+    }
+    section#forth-section .option h1{
+        font-size: 40px;
+    }
+    section#forth-section .option h4{
+        font-size: 14px;
+    }
+    section#fifth-section{
+        padding: 0px 5vw;
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    section#fifth-section .content{
+        width: 200px;
+        height: 355px;
+        margin-top: 50px;
+        margin-left: 60px;
+        transform: rotate(-30deg) skew(20deg) scale(0.6);
+    }
+    section#fifth-section .content img:nth-child(1){
+        transform: translate(20px,-20px);		
+        opacity: .4;
+    }
+    section#fifth-section .content img:nth-child(2){
+        transform: translate(40px,-40px);		
+        opacity: .6;
+    }
+    section#fifth-section .content img:nth-child(3){
+        transform: translate(60px,-60px);		
+        opacity: .8;
+    }
+    section#fifth-section .content img:nth-child(4){
+        transform: translate(80px,-80px);		
+        opacity: 1;
+    }
+    section#fifth-section .title{
+        text-align: left;
+        margin-top: 50px;
+    }
+    section#fifth-section .title h1{
+        font-size: 50px;
+    }
+    section#sixth-section .galery{
+        width: 90vw;
+        border-radius: 10px;
+    }
+    footer{
+        width: 100%;
+        height: 50px;
+        font-weight: 700;
+        font-size: 8px;
+    }
+    footer a{
+        color: var(--blue);
+        text-decoration: none;
+        margin-right: 5px;
+    }
+} 
