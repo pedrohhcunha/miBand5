@@ -149,6 +149,9 @@ section#second-section{
 section#second-section img{
     height: 50vh;
 }
+section#second-section button{
+    display: none;
+}
 section#second-section .feature{
     text-align: center;
     width: 400px;
@@ -192,6 +195,12 @@ section#third-section{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+section#third-section .dot{
+    display: none;
+}
+section#third-section .control{
+    display: none;
 }
 section#third-section .cards{
     display: flex;
@@ -364,6 +373,9 @@ footer a:hover{
 @media (max-width: 800px) {
     header{
         background-color: var(--orange);
+        width: 100vw;
+        padding: 0 5%;
+        position: fixed;
     }
     header #menuBtn{
         display: block;
@@ -426,6 +438,14 @@ footer a:hover{
     }
     section#second-section .right-features{
         transform: translateX(0);
+        overflow: hidden;
+        height: 0px;
+        opacity: 0;
+        transition: .5s;
+    }
+    section#second-section .right-features.active{
+        height: auto;
+        opacity: 1;
     }
     section#second-section .left-features .feature:nth-child(2){
         transform: translateX(0);
@@ -433,22 +453,79 @@ footer a:hover{
     section#second-section .right-features .feature:nth-child(2){
         transform: translateX(0);
     }
+    section#second-section button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border: 2px solid var(--white);
+        color: var(--white);
+        background-color: var(--blue);
+        padding: 5px 10px;
+        font-size: 14px;
+        margin: auto;
+    }
 }
 @media (max-width: 500px){
+    body{
+        overflow-x: hidden;
+    }
     section#third-section{
         width: 100%;
         padding-top: 100px;
         padding-bottom: 50px;
     }
+    section#third-section .area-cards{
+        position: relative;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    section#third-section .area-cards .dot{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--white);
+        color: var(--blue);
+        padding: 5px;
+        font-size: 25px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 10000;
+    }
+    section#third-section .area-cards .dot:nth-child(1){
+        top: 50%;
+        left: 5vw;
+        transform: translate(-50%, -50%);
+    }
+    section#third-section .area-cards .dot:nth-child(2){
+        top: 50%;
+        right: 5vw;
+        transform: translate(50%, -50%);
+    }
     section#third-section .cards{
         display: flex;
         align-items: center;
         justify-content: left; 
-        overflow-x: scroll;
+        overflow-x: hidden;
+        width: 300vw;
+        position: relative;
+        transition: .5s;
+    }
+    section#third-section .cards.first{
+        margin-left: 0;
+    }
+    section#third-section .cards.second{
+        margin-left: -100vw;
+    }
+    section#third-section .cards.third{
+        margin-left: -200vw;
     }
     section#third-section .cards .card{
         min-width: 90vw;
         margin: 0 5vw;
+    }
+    section#third-section .cards .card:hover{
+        filter: brightness(1);
     }
     section#forth-section{
         padding: 30px 5%;
